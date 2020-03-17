@@ -1,8 +1,9 @@
 import pytest
-import config
 from selenium.webdriver import DesiredCapabilities
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
+from tests import config
 
 
 def pytest_addoption(parser):
@@ -41,7 +42,7 @@ def driver(request):
         driver_.delete_all_cookies()
 
     elif config.browser == "chrome":
-        binary = "D:/Automation Projects/Python/bain-preprod/vendors/chromedriver.exe"
+        binary = "D:/Python Projects/SLB-Training-Python/vendor/chromedriver.exe"
         chrome_options = Options()
         chrome_options.add_argument('--disable-infobars')
         chrome_options.add_argument("--incognito")
