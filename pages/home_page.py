@@ -36,7 +36,7 @@ class HomePage(BasePage):
     # --------------------------------------------------------------------------------------------------------------------------------
     # Four Column Promo Component
 
-    four_column_component = {"by": By.CSS_SELECTOR, "value": 'body > section:nth-child(5)'}
+    four_column_component = {"by": By.CSS_SELECTOR, "value": 'section:nth-child(4) > div > div'}
 
     four_column_component_1 = {"by": By.CSS_SELECTOR,
                                "value": 'section:nth-child(4) > div > div > ul > li:nth-child(1)'}

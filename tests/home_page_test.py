@@ -61,17 +61,13 @@ class TestHomePage():
                 if home.four_column_component_1_image_is_displayed():
                     home.click_on_four_column_component_1_image()
                     time.sleep(2)
-                    assert (four_column_component_1_link == home.get_current_link())
-
-                else:
-                    print("The link has been changed")
+                    assert (four_column_component_1_link == home.get_current_link(), "The link has been changed")
+                    home.navigate_to_slb()
+                    time.sleep(2)
+                    home.scroll_to_four_column_component()
+                    time.sleep(2)
             else:
                 print("The Component 1 is not displayed")
-
-            home.navigate_to_slb()
-            time.sleep(2)
-            home.scroll_to_four_column_component()
-            time.sleep(2)
 
             if home.four_column_component_2_is_displayed():
                 print(home.four_column_component_2_name_get_text())
@@ -81,17 +77,13 @@ class TestHomePage():
                 if home.four_column_component_2_image_is_displayed():
                     home.click_on_four_column_component_2_image()
                     time.sleep(2)
-                    assert (four_column_component_2_link == home.get_current_link())
-
-                else:
-                    print("The link has been changed")
+                    assert (four_column_component_2_link == home.get_current_link(), "The link has been changed")
+                    home.navigate_to_slb()
+                    time.sleep(2)
+                    home.scroll_to_four_column_component()
+                    time.sleep(2)
             else:
                 print("The Component 2 is not displayed")
-
-            home.navigate_to_slb()
-            time.sleep(2)
-            home.scroll_to_four_column_component()
-            time.sleep(2)
 
             if home.four_column_component_3_is_displayed():
                 print(home.four_column_component_3_name_get_text())
@@ -101,18 +93,13 @@ class TestHomePage():
                 if home.four_column_component_3_image_is_displayed():
                     home.click_on_four_column_component_3_image()
                     time.sleep(2)
-                    assert (four_column_component_3_link == home.get_current_link())
-
-                else:
-                    print("The link has been changed")
+                    assert (four_column_component_3_link == home.get_current_link(), "The link has been changed")
+                    home.navigate_to_slb()
+                    time.sleep(2)
+                    home.scroll_to_four_column_component()
+                    time.sleep(2)
             else:
                 print("The Component 3 is not displayed")
-
-            home.navigate_to_slb()
-            time.sleep(2)
-            home.scroll_to_four_column_component()
-            time.sleep(2)
-
 
             if home.four_column_component_4_is_displayed():
                 print(home.four_column_component_4_name_get_text())
@@ -122,13 +109,9 @@ class TestHomePage():
                 if home.four_column_component_4_image_is_displayed():
                     home.click_on_four_column_component_4_image()
                     time.sleep(2)
-                    assert (four_column_component_4_link == home.get_current_link())
-
-                else:
-                    print("The link has been changed")
+                    assert (four_column_component_4_link == home.get_current_link(), "The link has been changed")
             else:
                 print("The Component 4 is not displayed")
-
         else:
             print("The Four Column Component Is Not Displayed")
 
