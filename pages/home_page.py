@@ -82,9 +82,91 @@ class HomePage(BasePage):
                                      "value": 'section:nth-child(4) > div > div > ul > li:nth-child(4) > div > h4'}
     four_column_component_4_description = {"by": By.CSS_SELECTOR,
                                            "value": 'section:nth-child(4) > div > div > ul > li:nth-child(4) > div > p'}
+    # --------------------------------------------------------------------------------------------------------------------------------
+    # Full Width Promo Component
+
+    full_width_promo_component = {"by": By.CSS_SELECTOR,
+                                  "value": 'section.full-width-promo'}
+    full_width_promo_component_title = {"by": By.CSS_SELECTOR,
+                                        "value": 'section.full-width-promo > div > div > div.col.medium-5 > h3'}
+
+    full_width_promo_component_description = {"by": By.CSS_SELECTOR,
+                                              "value": 'section.full-width-promo > div > div > div.col.medium-5 > p'}
+
+    full_width_promo_component_list_item_1 = {"by": By.CSS_SELECTOR,
+                                              "value": 'section.full-width-promo > div > div > div.col.medium-7 > ul > li:nth-child(1)'}
+
+    full_width_promo_component_list_item_2 = {"by": By.CSS_SELECTOR,
+                                              "value": 'section.full-width-promo > div > div > div.col.medium-7 > ul > li:nth-child(2)'}
+
+    full_width_promo_component_list_item_3 = {"by": By.CSS_SELECTOR,
+                                              "value": 'section.full-width-promo > div > div > div.col.medium-7 > ul > li:nth-child(3)'}
+
+    full_width_promo_component_list_item_4 = {"by": By.CSS_SELECTOR,
+                                              "value": 'section.full-width-promo > div > div > div.col.medium-7 > ul > li:nth-child(4)'}
+
+    full_width_promo_component_cta_button = {"by": By.CSS_SELECTOR,
+                                             "value": 'section.full-width-promo > div > div > div.col.medium-5 > a'}
+
+    # --------------------------------------------------------------------------------------------------------------------------------
+    # Four Column Promo Interview Component
+
+    promo_interview_component = {"by": By.CSS_SELECTOR,
+                                 "value": 'section.four-col-promo.interview'}
+
+    promo_interview_image_1 = {"by": By.CSS_SELECTOR,
+                               "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(1) > a > img'}
+
+    promo_interview_name_1 = {"by": By.CSS_SELECTOR,
+                              "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(1) > div > a > h3'}
+
+    promo_interview_title_1 = {"by": By.CSS_SELECTOR,
+                               "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(1) > div > h4'}
+
+    promo_interview_description_1 = {"by": By.CSS_SELECTOR,
+                                     "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(1) > div > p'}
+
+    promo_interview_image_2 = {"by": By.CSS_SELECTOR,
+                               "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(2) > a > img'}
+
+    promo_interview_name_2 = {"by": By.CSS_SELECTOR,
+                              "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(2) > div > a > h3'}
+
+    promo_interview_title_2 = {"by": By.CSS_SELECTOR,
+                               "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(2) > div > h4'}
+
+    promo_interview_description_2 = {"by": By.CSS_SELECTOR,
+                                     "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(2) > div > p'}
+
+    promo_interview_image_3 = {"by": By.CSS_SELECTOR,
+                               "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(3) > a > img'}
+
+    promo_interview_name_3 = {"by": By.CSS_SELECTOR,
+                              "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(3) > div > a > h3'}
+
+    promo_interview_title_3 = {"by": By.CSS_SELECTOR,
+                               "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(3) > div > h4'}
+
+    promo_interview_description_3 = {"by": By.CSS_SELECTOR,
+                                     "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(3) > div > p'}
+
+    promo_interview_image_4 = {"by": By.CSS_SELECTOR,
+                               "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(4) > a > img'}
+
+    promo_interview_name_4 = {"by": By.CSS_SELECTOR,
+                              "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(4) > div > a > h3'}
+
+    promo_interview_title_4 = {"by": By.CSS_SELECTOR,
+                               "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(4) > div > h4'}
+
+    promo_interview_description_4 = {"by": By.CSS_SELECTOR,
+                                     "value": 'section.four-col-promo.interview > div > div > ul > li:nth-child(4) > div > p'}
 
     def navigate_to_slb(self):
         self._visit(baseurl)
+
+    # --------------------------------------------------------------------------------------------------------------------------------
+    # Press Release Component
 
     def press_release_component_is_displayed(self):
         return self._is_displayed(self.press_release_component)
@@ -207,3 +289,93 @@ class HomePage(BasePage):
 
     def click_on_four_column_component_4_image(self):
         self._click(self.four_column_component_4_image)
+
+    # --------------------------------------------------------------------------------------------------------------------------------
+    # Full Width Promo Component
+
+    def scroll_to_full_width_promo_component(self):
+        return self._scroll_to_element(self.full_width_promo_component)
+
+    def full_width_promo_component_is_displayed(self):
+        return self._is_displayed(self.full_width_promo_component)
+
+    def full_width_promo_component_title_get_text(self):
+        return self._get_text(self.full_width_promo_component_title)
+
+    def full_width_promo_component_description_get_text(self):
+        return self._get_text(self.full_width_promo_component_description)
+
+    def full_width_promo_component_list_item_1_get_text(self):
+        return self._get_text(self.full_width_promo_component_list_item_1)
+
+    def full_width_promo_component_list_item_2_get_text(self):
+        return self._get_text(self.full_width_promo_component_list_item_2)
+
+    def full_width_promo_component_list_item_3_get_text(self):
+        return self._get_text(self.full_width_promo_component_list_item_3)
+
+    def full_width_promo_component_list_item_4_get_text(self):
+        return self._get_text(self.full_width_promo_component_list_item_4)
+
+    def full_width_promo_component_cta_button_is_displayed(self):
+        return self._is_displayed(self.full_width_promo_component_cta_button)
+
+    def click_on_full_width_promo_component_cta_button(self):
+        self._click(self.full_width_promo_component_cta_button)
+
+    # --------------------------------------------------------------------------------------------------------------------------------
+    # Four Column Promo Interview Component
+
+    def scroll_to_promo_interview_component(self):
+        return self._scroll_to_element(self.promo_interview_component)
+
+    def promo_interview_component_is_displayed(self):
+        return self._is_displayed(self.promo_interview_component)
+
+    def promo_interview_image_1_is_displayed(self):
+        return self._is_displayed(self.promo_interview_image_1)
+
+    def promo_interview_name_1_get_text(self):
+        return self._get_text(self.promo_interview_name_1)
+
+    def promo_interview_title_1_get_text(self):
+        return self._get_text(self.promo_interview_title_1)
+
+    def promo_interview_description_1_get_text(self):
+        return self._get_text(self.promo_interview_description_1)
+
+    def promo_interview_image_2_is_displayed(self):
+        return self._is_displayed(self.promo_interview_image_2)
+
+    def promo_interview_name_2_get_text(self):
+        return self._get_text(self.promo_interview_name_2)
+
+    def promo_interview_title_2_get_text(self):
+        return self._get_text(self.promo_interview_title_2)
+
+    def promo_interview_description_2_get_text(self):
+        return self._get_text(self.promo_interview_description_2)
+
+    def promo_interview_image_3_is_displayed(self):
+        return self._is_displayed(self.promo_interview_image_3)
+
+    def promo_interview_name_3_get_text(self):
+        return self._get_text(self.promo_interview_name_3)
+
+    def promo_interview_title_3_get_text(self):
+        return self._get_text(self.promo_interview_title_3)
+
+    def promo_interview_description_3_get_text(self):
+        return self._get_text(self.promo_interview_description_3)
+
+    def promo_interview_image_4_is_displayed(self):
+        return self._is_displayed(self.promo_interview_image_4)
+
+    def promo_interview_name_4_get_text(self):
+        return self._get_text(self.promo_interview_name_4)
+
+    def promo_interview_title_4_get_text(self):
+        return self._get_text(self.promo_interview_title_4)
+
+    def promo_interview_description_4_get_text(self):
+        return self._get_text(self.promo_interview_description_4)
