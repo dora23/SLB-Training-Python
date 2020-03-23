@@ -60,12 +60,12 @@ class TestHomePage():
                 print("-------------------------------------------------")
                 if home.four_column_component_1_image_is_displayed():
                     home.click_on_four_column_component_1_image()
-                    time.sleep(2)
+                    time.sleep(4)
                     assert (four_column_component_1_link == home.get_current_link(), "The link has been changed")
                     home.navigate_to_slb()
-                    time.sleep(2)
+                    time.sleep(4)
                     home.scroll_to_four_column_component()
-                    time.sleep(2)
+                    time.sleep(4)
             else:
                 print("The Component 1 is not displayed")
 
@@ -76,12 +76,12 @@ class TestHomePage():
                 print("-------------------------------------------------")
                 if home.four_column_component_2_image_is_displayed():
                     home.click_on_four_column_component_2_image()
-                    time.sleep(2)
+                    time.sleep(4)
                     assert (four_column_component_2_link == home.get_current_link(), "The link has been changed")
                     home.navigate_to_slb()
-                    time.sleep(2)
+                    time.sleep(4)
                     home.scroll_to_four_column_component()
-                    time.sleep(2)
+                    time.sleep(4)
             else:
                 print("The Component 2 is not displayed")
 
@@ -92,12 +92,12 @@ class TestHomePage():
                 print("-------------------------------------------------")
                 if home.four_column_component_3_image_is_displayed():
                     home.click_on_four_column_component_3_image()
-                    time.sleep(2)
+                    time.sleep(4)
                     assert (four_column_component_3_link == home.get_current_link(), "The link has been changed")
                     home.navigate_to_slb()
-                    time.sleep(2)
+                    time.sleep(4)
                     home.scroll_to_four_column_component()
-                    time.sleep(2)
+                    time.sleep(4)
             else:
                 print("The Component 3 is not displayed")
 
@@ -108,7 +108,7 @@ class TestHomePage():
                 print("-------------------------------------------------")
                 if home.four_column_component_4_image_is_displayed():
                     home.click_on_four_column_component_4_image()
-                    time.sleep(2)
+                    time.sleep(4)
                     assert (four_column_component_4_link == home.get_current_link(), "The link has been changed")
             else:
                 print("The Component 4 is not displayed")
@@ -121,9 +121,9 @@ class TestHomePage():
         cta_button_link = 'https://connect.slb.com/register'
 
         home.navigate_to_slb()
-        time.sleep(2)
+        time.sleep(4)
         home.scroll_to_full_width_promo_component()
-        time.sleep(2)
+        time.sleep(4)
 
         if home.full_width_promo_component_is_displayed():
             print(home.full_width_promo_component_title_get_text())
@@ -134,7 +134,7 @@ class TestHomePage():
             print(home.full_width_promo_component_list_item_4_get_text())
             if home.full_width_promo_component_cta_button_is_displayed():
                 home.click_on_full_width_promo_component_cta_button()
-                time.sleep(2)
+                time.sleep(4)
                 assert (cta_button_link == home.get_current_link())
             else:
                 print("The link has been changed")
@@ -144,32 +144,70 @@ class TestHomePage():
     # Four Column Promo Interview Component
 
     def test_promo_interview_component(self, driver, home):
+        promo_interview_link_1 = "https://www.slb.com/resource-library/interview/al/artificial-lift-insights-horizontal-pumps"
+        promo_interview_link_2 = "https://www.slb.com/resource-library/interview/oss/the-next-level-of-efficiency"
+        promo_interview_link_3 = "https://www.slb.com/resource-library/interview/drl/irisphere-see-ahead-bit"
+        promo_interview_link_4 = "https://www.slb.com/resource-library/interview/vl/rick-faircloth-api-in"
 
         home.navigate_to_slb()
-        time.sleep(2)
+        time.sleep(4)
         home.scroll_to_promo_interview_component()
-        time.sleep(2)
+        time.sleep(4)
 
         if home.promo_interview_component_is_displayed():
             print(home.promo_interview_name_1_get_text())
             print(home.promo_interview_title_1_get_text())
             print(home.promo_interview_description_1_get_text())
-            assert home.promo_interview_image_1_is_displayed()
+            if  home.promo_interview_image_1_is_displayed():
+                home.click_on_promo_interview_image_1()
+                time.sleep(4)
+                assert (promo_interview_link_1 == home.get_current_link())
+            else:
+                print("The link 1 has been changed")
+            home.navigate_to_slb()
+            time.sleep(4)
+            home.scroll_to_promo_interview_component()
+            time.sleep(4)
             print("-------------------------------------------------")
+
             print(home.promo_interview_name_2_get_text())
             print(home.promo_interview_title_2_get_text())
             print(home.promo_interview_description_2_get_text())
-            assert home.promo_interview_image_2_is_displayed()
-            print("------------------------------------------------~-"
-                  "++++++++++++++++++++++-")
+            if home.promo_interview_image_2_is_displayed():
+                home.click_on_promo_interview_image_2()
+                time.sleep(4)
+                assert (promo_interview_link_2 == home.get_current_link())
+            else:
+                print("The link 2 has been changed")
+            home.navigate_to_slb()
+            time.sleep(4)
+            home.scroll_to_promo_interview_component()
+            time.sleep(4)
+            print("--------------------------------------------------")
+
             print(home.promo_interview_name_3_get_text())
             print(home.promo_interview_title_3_get_text())
             print(home.promo_interview_description_3_get_text())
-            assert home.promo_interview_image_3_is_displayed()
+            if home.promo_interview_image_3_is_displayed():
+                home.click_on_promo_interview_image_3()
+                time.sleep(4)
+                assert (promo_interview_link_3 == home.get_current_link())
+            else:
+                print("The link 3 has been changed")
+            home.navigate_to_slb()
+            time.sleep(4)
+            home.scroll_to_promo_interview_component()
+            time.sleep(4)
             print("-------------------------------------------------")
+
             print(home.promo_interview_name_4_get_text())
             print(home.promo_interview_title_4_get_text())
             print(home.promo_interview_description_4_get_text())
-            assert home.promo_interview_image_4_is_displayed()
+            if home.promo_interview_image_4_is_displayed():
+                home.click_on_promo_interview_image_4()
+                time.sleep(4)
+                assert (promo_interview_link_4 == home.get_current_link())
+            else:
+                print("The link 4 has been changed")
         else:
             print("The Promo Interview Component Is Not Displayed")

@@ -379,3 +379,15 @@ class HomePage(BasePage):
 
     def promo_interview_description_4_get_text(self):
         return self._get_text(self.promo_interview_description_4)
+
+    def click_on_promo_interview_image_1(self):
+        self._click(self.promo_interview_image_1)
+
+    def click_on_promo_interview_image_2(self):
+        self._click(self.promo_interview_image_2)
+
+    def click_on_promo_interview_image_3(self):
+        self._click(self.promo_interview_image_3)
+
+    def click_on_promo_interview_image_4(self):
+        self._click(self.promo_interview_image_4)
