@@ -6,4 +6,4 @@ careers_url = "https://careers.slb.com/"
 investors_url = "https://investorcenter.slb.com/"
 global_stewardship_url = 'https://www.slb.com/globalstewardship/index.html'
 all_characterization_link = "https://www.slb.com/reservoir-characterization"
-
+resourceurl = "https://www.slb.com/resource-library"
