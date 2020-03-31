@@ -112,4 +112,3 @@ class TestInsightsPage():
 
         insights.click_on_clear_all_button()
         time.sleep(3)
-
