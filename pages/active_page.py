@@ -44,8 +44,17 @@ class ActivePage(BasePage):
     tools_section = {"by": By.XPATH,
                         "value": '/html/body/section[5]/div/div[1]/div'}
 
+    view_all_related_information_cta = {"by": By.XPATH,
+                        "value": '/html/body/section[6]/div/a'}
+
+    selected_option = {"by": By.CSS_SELECTOR,
+                                        "value": 'div.selected-options > div.selected-options__items > div.selected-options__item > span:nth-child(2)'}
+
     def navigate_to_slb_active(self):
         self._visit(active_slb_url)
+
+    def selected_option_get_text(self):
+        return self._get_text(self.selected_option)
 
     def bread_crumbs_is_displayed(self):
         return self._is_displayed(self.bread_crumbs)
@@ -86,6 +95,9 @@ class ActivePage(BasePage):
     def click_on_tools_section(self):
         self._click(self.tools_section)
 
+    def click_on_view_all_related_information_cta(self):
+        self._click(self.view_all_related_information_cta)
+
     def get_services_cards(self):
         cards = self.driver.find_elements_by_xpath(
             '/html/body/section[4]/div/div[2]/div/section/div/div/div/div')
@@ -103,4 +115,12 @@ class ActivePage(BasePage):
         return cards
 
     def tools_cards_count(self):
-        return len(self.get_services_cards())
+        return len(self.get_tools_cards())
+
+    def get_related_information_cards(self):
+        cards = self.driver.find_elements_by_xpath(
+            '/html/body/section[6]/div/div/div')
+        return cards
+
+    def related_information_cards_count(self):
+        return len(self.get_related_information_cards())

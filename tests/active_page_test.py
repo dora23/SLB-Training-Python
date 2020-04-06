@@ -88,3 +88,24 @@ class TestActivePage():
             card_description_tools = active.find_items(locator_description_tools)
             print("\n" + card_titles_tools.text + "\n" + card_sub_title_tools.text + "\n" + card_description_tools.text)
             print("-----------------------------------")
+
+        number_of_related_information_card_items = active.related_information_cards_count()
+
+        for y in range(1, number_of_related_information_card_items + 1):
+            locator_title_related_information = {"by": By.XPATH,
+                                                 "value": "/html/body/section[6]/div/div/div[(" + str(
+                                                     y) + ")]/a/div/div[2]/h3"}
+            locator_description_related_information = {"by": By.XPATH,
+                                                       "value": "/html/body/section[6]/div/div/div[(" + str(
+                                                           y) + ")]/a/div/div[2]/p"}
+
+            card_titles_related_information = active.find_items(locator_title_related_information)
+            card_description_related_information = active.find_items(locator_description_related_information)
+            print("\n" + card_titles_related_information.text + "\n" + card_description_related_information.text)
+            print("-----------------------------------")
+
+        active.click_on_view_all_related_information_cta()
+        time.sleep(2)
+        selected_option = "ACTive Coiled Tubing Services"
+
+        assert (active.selected_option_get_text() == selected_option, "The selected option text is incorrect")
