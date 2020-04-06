@@ -8,3 +8,4 @@ global_stewardship_url = 'https://www.slb.com/globalstewardship/index.html'
 all_characterization_link = "https://www.slb.com/reservoir-characterization"
 resourceurl = "https://www.slb.com/resource-library"
 insightsurl ="https://www.slb.com/insights"
+active_slb_url ="https://www.slb.com/well-intervention/coiled-tubing-intervention/active-real-time-downhole-coiled-tubing-services"

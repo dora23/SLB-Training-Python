@@ -10,7 +10,7 @@ class SubmenuPage(BasePage):
 
     submenu_bar = {"by": By.CSS_SELECTOR, "value": 'div.wrapper.show-for-large'}
     submenu_chr = {"by": By.CSS_SELECTOR, "value": '#mainnav__511e3bf8-27cb-4a88-8220-9f3df25c08c9 >a'}
-    submenu_dril = {"by": By.CSS_SELECTOR, "value": '#mainnav__b21fea09-dbc0-4d39-ab1c-eabfe3b791e6 > a'}
+    submenu_drill = {"by": By.CSS_SELECTOR, "value": '#mainnav__b21fea09-dbc0-4d39-ab1c-eabfe3b791e6 > a'}
     submenu_comp = {"by": By.CSS_SELECTOR, "value": '#mainnav__2cc866ee-53dd-409d-8dbf-83e025535d5e > a'}
     submenu_prod = {"by": By.CSS_SELECTOR, "value": '#mainnav__027c1327-8430-4224-aedb-b9b131f0a322 > a'}
     submenu_interv = {"by": By.CSS_SELECTOR, "value": '#mainnav__1962fc28-6344-4d17-bde0-5aca4c6e61a2 > a'}
@@ -33,7 +33,7 @@ class SubmenuPage(BasePage):
         return self._get_text(self.submenu_chr)
 
     def submenu_dril_get_text(self):
-        return self._get_text(self.submenu_dril)
+        return self._get_text(self.submenu_drill)
 
     def submenu_comp_get_text(self):
         return self._get_text(self.submenu_comp)
@@ -59,6 +59,18 @@ class SubmenuPage(BasePage):
     def click_on_submenu_chr(self):
         self._click(self.submenu_chr)
 
+    def click_on_submenu_drill(self):
+        self._click(self.submenu_drill)
+
+    def click_on_submenu_completion(self):
+        self._click(self.submenu_comp)
+
+    def click_on_submenu_prod(self):
+        self._click(self.submenu_prod)
+
+    def click_on_submenu_interv(self):
+        self._click(self.submenu_interv)
+
     def get_characterization_submenu_items(self):
         elems = self.driver.find_elements_by_css_selector(
             '#mega__511e3bf8-27cb-4a88-8220-9f3df25c08c9 > div.row > div.megamenu__main > div.megamenu__main__col')
@@ -70,3 +82,34 @@ class SubmenuPage(BasePage):
     def find_items(self, item):
         return self._find(item)
 
+    def get_drill_submenu_items(self):
+        elems = self.driver.find_elements_by_css_selector(
+            '#mega__b21fea09-dbc0-4d39-ab1c-eabfe3b791e6 > div.row > div.megamenu__main > div.megamenu__main__col')
+        return elems
+
+    def drill_submenu_items_count(self):
+        return len(self.get_drill_submenu_items())
+
+    def get_completion_submenu_items(self):
+        elems = self.driver.find_elements_by_css_selector(
+            '#mega__2cc866ee-53dd-409d-8dbf-83e025535d5e > div.row > div.megamenu__main > div.megamenu__main__col')
+        return elems
+
+    def completion_submenu_items_count(self):
+        return len(self.get_completion_submenu_items())
+
+    def get_production_submenu_items(self):
+        elems = self.driver.find_elements_by_css_selector(
+            '#mega__027c1327-8430-4224-aedb-b9b131f0a322 > div.row > div.megamenu__main > div.megamenu__main__col')
+        return elems
+
+    def production_submenu_items_count(self):
+        return len(self.get_production_submenu_items())
+
+    def get_intervention_submenu_items(self):
+        elems = self.driver.find_elements_by_css_selector(
+            '#mega__1962fc28-6344-4d17-bde0-5aca4c6e61a2 > div.row > div.megamenu__main > div.megamenu__main__col')
+        return elems
+
+    def intervention_submenu_items_count(self):
+        return len(self.get_intervention_submenu_items())
